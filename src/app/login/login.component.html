@@ -1,0 +1,22 @@
+<h1 appColor>Hey this is Login Component</h1>
+<div class="card col-md-4 offset-md-4 mt-5">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="username">username</label>
+                <input type="text" name="username" placeholder="enter the username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" name="password" placeholder="enter the password" class="form-control">
+            </div>
+            <button name="login" class="btn btn-primary mr-5">Login</button>
+            <button name="cancel" class="btn btn-primary">Cancel</button>
+        </form>
+    </div>
+</div>
+<div>
+    <a routerLink="forgotpassword">forgotpassword</a>
+</div>
+<router-outlet></router-outlet>

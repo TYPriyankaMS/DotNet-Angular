@@ -1,0 +1,44 @@
+<h1 [style.color]='flag ? "blue" :"green"'>{{title}}</h1>
+<!-- syntax of interpolation-->
+<!-- <div class="form-group">
+    <label for="username">Useranme</label>
+    <input type="text" class="form-control" name="username" [(ngModel)]="username">
+    <div>{{username}}</div>
+</div> -->
+
+Enter the name <input type="text" name="name" [(ngModel)]="name"> {{name}} Enter the password:<input type="text" name="password" [(ngModel)]="password">
+<div *ngIf="password">
+    <div *ngIf='password==="qwerty"; then ifBlock else elseBlock'></div>
+
+    <ng-template #ifBlock>
+        <p>password is correct</p>
+    </ng-template>
+    <ng-template #elseBlock>
+        <p> password is incorrect</p>
+    </ng-template>
+</div>
+<button name="clickMe" (click)="click()">Click Me</button>
+<!--syntax for event binding-->
+
+<img [src]=url>
+<!--syntax of property binding: either of the way communciating betn ts to html or html to ts -->
+<ul *ngFor='let prod of products'>
+    <li>{{prod.name}}</li>
+    <li><img [src]=prod.image height="300px" width="300px"></li>
+    <li>{{prod.price}}</li>
+</ul>
+
+<div class="form-group col-md-2">
+    <label>choose the gender</label>
+    <select class="form-control" name="gender" [(ngModel)]="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="other">others</option>
+  </select>
+</div>
+
+<div [ngSwitch]='gender'>
+    <div *ngSwitchCase='"Male"'>you have choosen a Male</div>
+    <div *ngSwitchCase='"Female"'>you have choosen a Female</div>
+    <div *ngSwitchDefault> you choosen others</div>
+</div>
